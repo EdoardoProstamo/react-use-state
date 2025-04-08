@@ -1,5 +1,5 @@
 import languages from "../../data/languages";
-import Text from "./text";
+import ExplanationText from "./text";
 
 function Main() {
 
@@ -8,7 +8,7 @@ function Main() {
             <div className="button-container">
                 {languages.map(languages => <button key={languages.id}>{languages.title}</button>)}
             </div>
-            <Text />
+            <ExplanationText />
         </div>
     </main>
 }
