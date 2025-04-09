@@ -1,5 +1,5 @@
-import Header from "./components/header"
-import Main from "./components/main"
+import Header from "./components/Header"
+import Main from "./components/main";
 
 function App() {
 
@@ -14,4 +14,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

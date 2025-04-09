@@ -1,0 +1,12 @@
+.btn {
+    background-color: #aa00aa;
+}
+
+.selected {
+    background-color: #c3f3f3;
+}
+
+.container {
+    width: 1000px;
+    height: 100px;
+}

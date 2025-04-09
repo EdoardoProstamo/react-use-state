@@ -1,39 +1,23 @@
-import languages from "../../data/languages";
-import ExplanationText from "./text";
-import { useState } from "react";
+import { useState } from "react"
+import Text from "./Text"
+import Button from "./Button";
+import languages from "../data/languages";
+
 
 function Main() {
 
-    // useState per mostrare/nascondere degli elementi
-    const [isOpen, setIsOpen] = useState(true);
+    const startingLanguage = null;
+    const [selectedLanguage, setSelectedLanguage] = useState(startingLanguage);
 
-    // con prev => !prev, facciamo in modo che si verifichi: la prima volta una condizione, la volta dopo la condizione opposta
-    const toggle = () => {
-        setIsOpen(prev => !prev)
-    };
+    return (
+        <>
+            {
+                languages.map(language => <Button key={language.id} title={language.title} isSelected={selectedLanguage === language} onSelect={() => setSelectedLanguage(language)} />)
+            }
 
-    return <main>
-        <div className="container">
-            <div className="button-container">
-                {languages.map(languages =>
-                    <button key={languages.id} onClick={toggle}>
-                        {languages.title}
-                    </button>)}
-            </div>
-
-            {isOpen && <div>
-                <ExplanationText />
-            </div>}
-        </div>
-    </main>
-}
-
-
-
-
-
-
-
-
+            {!selectedLanguage ? <div className="container">Nessun linguaggio selezionato</div> : <Text item={selectedLanguage} />}
+        </>
+    )
+};
 
 export default Main;

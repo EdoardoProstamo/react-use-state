@@ -1,15 +1,12 @@
-import languages from "../../data/languages";
-import { useState } from "react";
+const Text = ({ item }) => {
 
-function ExplanationText() {
+    const title = item.title;
+    const description = item.description;
 
-    // condizione in cui non si seleziona nessun bottone, quindi nessun oggetto dell'array languages
-    if (!languages.length) {
-        return <div className="text-container">Nessun linguaggio selezionato!</div>
-    }
+    return <div>
+        <h2>{title}</h2>
+        <p>{description}</p>
+    </div>
+};
 
-    return languages.map(languages => <p key={languages.id}>{languages.description}</p>)
-}
-
-
-export default ExplanationText;
+export default Text;
